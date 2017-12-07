@@ -1,0 +1,57 @@
+.before-icon-control-only-numbers,
+.after-icon-control-only-numbers{
+    font-size: 18px;
+}
+
+.CCBU{
+    display: inline-block;
+}
+
+.CCBU label{
+    margin-top: 7px;
+    padding-right: 10px;
+}
+
+.CCBU-content{
+    display: inline-block;
+    vertical-align: top;   
+}
+
+.CCBU-show-errors > *{
+    display: inline-block;
+    vertical-align: middle;
+    color: rgb(230, 5, 5);
+}
+
+.CCBU-down-error{
+    text-align: right;
+    margin-top: 7px;
+   
+}
+.CCBU-down-error p {
+    margin:0;
+    padding-right: 5px;
+}
+
+.CCBU-inline-error{
+    text-align: left;
+    display: inline-block;
+}
+
+.CCBU-inline-error p{
+    margin:0;
+    padding-left: 5px;
+}
+
+.es-obligatorio input{
+    background-color: #f7fce3;
+}
+
+.CCBU-error-marked label{
+    color: rgb(230, 5, 5);
+}
+
+.CCBU-error-marked input{
+    border-color:rgb(230, 5, 5);
+    color: rgb(230, 5, 5);
+}

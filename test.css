@@ -1,0 +1,68 @@
+h4{
+    font-weight: 700;
+    color: red;
+    margin-bottom: 20px;
+}
+
+h4 i{
+    font-size: 40px !important;
+    float: left;
+    margin-top: -15px;
+    margin-right: 10px;
+}
+
+a:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.code-example{
+    padding: 10px;
+    box-sizing: border-box;
+   
+
+}
+
+.code-example-html{
+    margin: 10px 0;
+}
+
+pre, .code-example-html{
+    background-color: #1a4a75 !important;
+    color: white !important;
+}
+
+.code-example-html code{
+    padding: 10px;
+    color:white;
+    background-color: transparent !important;
+}
+
+section{
+    margin: 40px 0;
+}
+
+p span{
+    color: red;
+    font-weight: 700; 
+}
+
+pre span{
+    color: #30bb0d;
+}
+
+h6{
+    color: #1a4a75 ;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.blurControl{
+    background-color: #b7cce680 !important;
+    border:2px solid skyblue;
+}
+
+.redControl input{
+    background-color: #e6b7cb80 !important;
+    border:2px solid rgb(241, 92, 92);
+}

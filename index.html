@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="controlCBU.css" rel="stylesheet" />
+    <link href="test.css" rel="stylesheet" />
+    <style>
+        input.azul {
+            background-color: rgba(55, 50, 240, 0.5);
+        }
+        .marked{
+            background-color: #b7cce680 !important;
+        }
+    </style>
+
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="VistaController" class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <form method="GET" ng-submit="Enviar($event)" class="form-inline">
+                    <h1>Control AngularJS CBU para PISCYS</h1>
+                    <p>
+                        <strong>Objetivo:</strong>Permitir la entrada de CBU valido.
+                    </p>
+                    <p>
+                        Desarrollado con los mismos criterios de los campos en AS DIRECT con HTML, CSS, AngularJS y Javascript.
+                    </p>
+                    <hr>
+                    <section>
+                        <h5>Código: <strong>Javascript de Vista dentro del controlador</strong></h5>
+                        <div class="code-example">                      
+    <pre>
+        $scope.Datos = {
+            NumeroCBUuno: "2850590940090418135201",
+            NumeroCBUunoError: "2850590940090418135205" 
+        }
+    </pre>     
+                        </div>
+                        <h5>Código: <strong>HTML de Vista</strong></h5>
+                        <div class="code-example">                      
+                                <pre>
+    &lt;control-cbu id="ComponentCBUuno" model="Datos.NumeroCBUuno" label="CBU"&gt;&lt;/control-cbu&gt;
+                                </pre>     
+                        </div>
+                        <p>
+                            Las propiedades obligatorias son <span>model</span> e <span>id</span>. El primero representa la relacion de la vista con el controlador Angular.js, la propiedad <span>ng-model</span>. La segunda es un id que identifica al control, es importante en caso que se encuentre mas de un control de este tipo en la vista y una mejora con respecto a los controles de <span>AS DIRECT</span> que automaticamente se genera un objeto en el <span>$scope</span> padre con el <span>id</span> provisto por la propiedad.
+                        </p>
+                        <p>
+                            la propiedad <span>label</span> genera un etiqueta para el control con el string pasado por valor.
+                        </p>
+                    </section>
+                    <section>
+                        <h4><i class="fa fa-check" aria-hidden="true"></i>CBU Correcto</h4>
+                        <div>
+                            <control-cbu id="ComponentCBUuno" model="Datos.NumeroCBUuno" label="CBU"></control-cbu>
+                        </div>
+                    </section>
+                   <section>
+                        <h4><i class="fa fa-exclamation-circle" aria-hidden="true"></i>CBU Incorrecto</h4>
+                        <p>Por defecto el error se ubica por debajo del campo</p>
+                        <div>
+                            <control-cbu id="ComponentCBUunoError" model="Datos.NumeroCBUunoError" label="CBU"></control-cbu>
+                        </div>
+                   </section>
+                    <hr>
+                  
+                    <section>
+                        <h4><i class="fa fa-child" aria-hidden="true"></i> Instancia del Objeto CbuControl en el $Scope</h4>
+                        <p>Una de las cuestiones que sucedia en <span>AS DIRECT</span> era la imposibilidad de cambiar un estado dentro del controlador Angular.js, o mejor dicho. Los controles desarrollados no tiene tales opciones. Por ejemplo dependiendo de una configuración se desactive o active un control. Esta fue una mejora a plantear </p>
+                        <p>Como comente anteriormente cada vez que se crea una instancia del control <span>control-cbu</span> se génera una instancia de la clase Javascript <span>cbuControl</span> dentro del <span>$scope</span> que contiene el control. </p>
+                        <div class="code-example">                      
+<pre>
+    <span>// Desactiva el control.</span>
+    $scope.ComponentCBUdos.Disabled(true);
+    <br>
+    <span>// Activa el control.</span>
+    $scope.ComponentCBUdos.Disabled(false);
+</pre>     
+                        </div>
+                        <section>
+                                <div id="tabs-control1">
+                                        <ul>
+                                                <li><a href="#tabs-1">Vista</a></li>
+                                          <li><a href="#tabs-2">HTML</a></li>
+                                          <li><a href="#tabs-3">Javascript</a></li>
+
+                                        </ul>
+                                        <div id="tabs-1">
+                                                <div>
+                                                        <control-cbu id="ComponentCBUdos" model="Datos.NumeroCBUdos" label="CBU" ></control-cbu>
+                                                        <button type="button" id="btnActivar" ng-click="Activar()">Activar</button>
+                                                        <button type="button" id="btnDesactivar" ng-click="Desactivar()">Desactivar</button>
+                                                </div>
+                                        </div>
+                                        <div id="tabs-2">
+                                                <div class="code-example-html">  
+                                        <code>
+                                            
+                                                &lt;div&gt;<br>
+                                                <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUdos&quot; model=&quot;Datos.NumeroCBUdos&quot; label=&quot;CBU&quot; &gt;&lt;/control-cbu&gt;</span><br>
+                                                &nbsp;&nbsp;&lt;button type=&quot;button&quot; id=&quot;btnActivar&quot; ng-click=&quot;Activar()&quot;&gt;Activar&lt;/button&gt;<br>
+                                                &nbsp;&nbsp;&lt;button type=&quot;button&quot; id=&quot;btnDesactivar&quot; ng-click=&quot;Desactivar()&quot;&gt;Desactivar&lt;/button&gt;<br>
+                                                &lt;/div&gt;
+                                        </code>
+                                           </div>     
+                                               
+                                        </div>
+                                        <div id="tabs-3">
+                                                <div class="code-example">                      
+<pre>
+    $scope.Datos = {
+        NumeroCBUdos:""
+    }
+
+    $scope.Activar = function(){
+        $scope.ComponentCBUdos.Disabled(false);     
+    }
+
+    $scope.Desactivar = function(){
+        $scope.ComponentCBUdos.Disabled(true);     
+    }
+</pre>     
+                                                </div>
+                                               
+                                        </div>
+                                      
+                                      </div>
+                        </section>
+
+                     
+                   </section>
+                   <section>
+                       <p>En el ejemplo se utilizan dos botones para <span>Activar</span> y <span>Desactivar</span> el campo de entrada de CBU. Los botones utilizan la directiva <span>ng-click</span> para vincular los eventos a los botones. Los métodos se encuentran en la solapa <span>Javascript</span> junto al <span>ng-model</span>.</p>
+                   </section>
+                   <section>
+                       <p>
+                           La siguiente imagen muestra una instancia de la clase Javascript <span>CbuControl</span> (<span>console.dir()</span> imprime un objeto JS como un árbol de clave/valor) con una serie de propiedades que permiten su funcionamiento.
+                       </p>
+                       <img src="image1.jpg" />
+                   </section>
+                   <hr>
+                   <section>
+                        <h4><i class="fa fa-file-text-o" aria-hidden="true"></i>Propiedades</h4>
+                        <h6>required</h6>
+                        <p>
+                            Define el campo como requerido. Equivale a la propiedad HTML <span>required</span>. Al definir esta propiedad como verdadera cada vez que sea haga foco(focus) y luego se salga(blur) ejecutara un mensaje de error. Cuando un campo es obligatorio tiene un fondo amarrillo palido como <span>AS DIRECT</span>. 
+                        </p>
+                        <div class="code-example-html">  
+                                <code>
+                                    
+                                        &lt;div&gt;<br>
+                                        <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUcuatro&quot; model=&quot;Datos.NumeroCBUcuatro&quot; label=&quot;CBU&quot; required=&quot;true&quot; &gt;&lt;/control-cbu&gt;</span><br>
+                                        &lt;/div&gt;
+                                </code>
+                        </div>
+                        <p>
+                                <control-cbu id="ComponentCBUcuatro" model="Datos.NumeroCBUcuatro" label="CBU" required="true"></control-cbu>
+                        </p>
+                        <hr>
+                        <h6>setdisabled</h6>
+                        <p>
+                            Define el campo como desactivado. Equivale a la propiedad HTML <span>disabled</span>. Al definir esta propiedad como verdadera el control toma de color de fondo un color gris y el cursor cambia evitando que se pueda editar el valor. 
+                        </p>
+                        <div class="code-example-html">  
+                                <code>
+                                    
+                                        &lt;div&gt;<br>
+                                        <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUcuatro&quot; model=&quot;Datos.NumeroCBUcuatro&quot; label=&quot;CBU&quot; setdisabled=&quot;true&quot; &gt;&lt;/control-cbu&gt;</span><br>
+                                        &lt;/div&gt;
+                                </code>
+                        </div>
+                        <p>
+                                <control-cbu id="ComponentCBUquinto" model="Datos.NumeroCBUquinto" label="CBU" setdisabled="true"></control-cbu>
+                        </p>  
+                        <hr>
+                        <h6>cssclass</h6>
+                        <p>
+                            Define una clase <span>css</span> para el campo. En la estructura interna del control; este esta formado por una serie de divs, un label, spans y un input al que se le escribirá el atributo. 
+                        </p>
+                        <div class="code-example-html">  
+                                <code>
+                                    
+                                        &lt;div&gt;<br>
+                                        <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUsexto&quot; model=&quot;Datos.NumeroCBUsexto&quot; label=&quot;CBU&quot; cssclass=&quot;blurControl&quot; &gt;&lt;/control-cbu&gt;</span><br>
+                                        &lt;/div&gt;
+                                </code>
+                        </div>
+                        <div class="code-example-html">  
+                                <code>
+                                    <prev>
+                                        .blurControl{<br>
+                                                     background-color: #b7cce680 !important;<br>
+                                                     border:2px solid skyblue;<br>
+                                            }
+                                    </prev>   
+                                </code>
+                        </div>
+                        <p>
+                                <control-cbu id="ComponentCBUsexto" model="Datos.NumeroCBUsexto" label="CBU" cssclass="blurControl"></control-cbu>
+                        </p>
+                        <hr>
+                        <h6>ng-class</h6>
+                        <p>
+                            Equivale al atributo Angular.js <span>ng-class</span> al cual se le puede pasar por valor un objeto JS que determine una clase css. 
+                        </p>
+                        <div class="code-example-html">  
+                                <code>
+                                    
+                                        &lt;div&gt;<br>
+                                        <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUseptimo&quot; model=&quot;Datos.NumeroCBUseptimo&quot; label=&quot;CBU&quot; ng-class=&quot;{blurControl:error}&quot; &gt;&lt;/control-cbu&gt;</span><br>
+                                        &lt;/div&gt;
+                                </code>
+                        </div>
+                        <p>
+                                <control-cbu id="ComponentCBUseptimo" model="Datos.NumeroCBUseptimo" label="CBU" ng-class="{redControl:true}"></control-cbu>
+                        </p>
+                        <hr>
+                        <h6>readonly</h6>
+                        <p>
+                            Define un campo de solo lectura
+                        </p>
+                        <div class="code-example-html">  
+                                <code>
+                                    
+                                        &lt;div&gt;<br>
+                                        <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUoctavo&quot; model=&quot;Datos.NumeroCBUoctavo&quot; label=&quot;CBU&quot; readonly=&quot;true&quot; &gt;&lt;/control-cbu&gt;</span><br>
+                                        &lt;/div&gt;
+                                </code>
+                        </div>
+                        <p>
+                                <control-cbu id="ComponentCBUoctavo" model="Datos.NumeroCBUoctavo" label="CBU" readonly="true"></control-cbu>
+                        </p>           
+                    </section>
+                    <hr>
+                   <section>
+                        <h4>Otros métodos</h4>
+                        <h6>$scope.[Instance].Required(boolean)</h6>
+                        <p>
+                            Permite determinar como requerido o no un control CBU. Equivale a la propiedad <span>required</span> de un control <span>input</span> html
+                        </p>
+                        <div class="code-example">                      
+<pre>
+    <span>// Define el campo como requerido</span>
+    $scope.ComponentCBUdos.Required(true);
+
+    <span>// Define el campo como no requerido</span>
+    $scope.ComponentCBUdos.Required(false);
+</pre>     
+                        </div>
+                   </section>
+                   <section>
+                        <h6>$scope.[Instance].Disabled(boolean)</h6>
+                        <p>
+                            Permite desactivar/activar un control CBU. Equivale a la propiedad <span>disabled</span> de un control <span>input</span> html
+                        </p>
+                        <div class="code-example">                      
+<pre>
+    <span>// Define el campo como requerido</span>
+    $scope.ComponentCBUdos.Required(true);
+
+    <span>// Define el campo como no requerido</span>
+    $scope.ComponentCBUdos.Required(false);
+</pre>     
+                        </div>
+                   </section>
+                   <section>
+                        <h6>$scope.[Instance].IsDisabled()</h6>
+                        <h6>$scope.[Instance].IsRequired()</h6>
+                        <p>
+                            Ambos métodos obtienen el valor booleano de la propiedades de <span>disabled</span> o <span>required</span> en cada caso. 
+                        </p>
+                        <div class="code-example">                      
+<pre>
+    <span>// Devuelve true si el campo esta desactivado</span>
+    $scope.ComponentCBUdos.IsDisabled();
+
+    <span>// Devuelve true si el campo esta definido como requerido</span>
+    $scope.ComponentCBUdos.IsRequired();
+</pre>     
+                        </div>
+                   </section>
+                   <section>
+                        <h6>$scope.[Instance].AddClass(str)</h6>
+                        <h6>$scope.[Instance].RemoveClass(str)</h6>
+                        <p>
+                            Ambos métodos modifican el atributo <span>HTML class</span>.<span>AddClass</span> permite agregar una clase CSS al control pasandola por parametro al método. <span>RemoveClass</span> elimina la clase pasada por parametro.
+                        </p>
+                        <div id="tabs-control2">
+                                <ul>
+                                        <li><a href="#tabs-1">Vista</a></li>
+                                  <li><a href="#tabs-2">HTML</a></li>
+                                  <li><a href="#tabs-3">CSS</a></li>
+                                  <li><a href="#tabs-4">Javascript</a></li>
+
+                                </ul>
+                                <div id="tabs-1">
+                                        <div>
+                                                <control-cbu id="ComponentCBUtres" model="Datos.NumeroCBUtres" label="CBU"></control-cbu>
+                                                <button type="button" id="btnAddClase" class="btn btn-primary" ng-click="AgregarClase('marked')">Agregar Clase</button>
+                                                <button type="button" id="btnRemoveClase" class="btn btn-primary" ng-click="Quitarsela('marked')">Quitarsela</button>
+                                        </div>
+                                </div>
+                                <div id="tabs-2">
+                                        <div class="code-example-html">  
+                                <code>
+                                        &lt;control-cbu id="ComponentCBUtres" model="Datos.NumeroCBUtres" label="CBU"&gt;&lt;/control-cbu&gt;<br>
+                                        &lt;button type="button" id="btnAddClase" class="btn btn-primary" ng-click="AgregarClase('marked')"&gt;
+                                        Agregar Clase
+                                        &lt;/button&gt;<br>
+                                        &lt;button type="button" id="btnRemoveClase" class="btn btn-primary" ng-click="Quitarsela('marked')"&gt;
+                                        Quitarsela
+                                        &lt;/button&gt;
+                                </code>
+                                   </div>     
+                                       
+                                </div>
+                                <div id="tabs-3">
+<pre>
+    .marked{
+        background-color: #b7cce680 !important;
+    }
+</pre>
+                                </div>
+                                <div id="tabs-4">
+                                        <div class="code-example">                      
+<pre>
+$scope.Datos = 
+{
+    NumeroCBUtres:""
+}
+
+$scope.AgregarClase = function(cls)
+{
+    $scope.ComponentCBUtres.AddClass(cls);     
+}
+
+$scope.Quitarsela = function(cls)
+{
+    $scope.ComponentCBUtres.RemoveClass(cls);     
+}
+</pre>     
+                                        </div>
+                                       
+                                </div>
+                              
+                              </div>
+                       <div>
+                         
+                        </div>
+                       
+                   </section>
+                   <hr>
+                   <section>
+                        <h4><i class="fa fa-bolt" aria-hidden="true"></i>Eventos</h4>
+                        <h6>on-blur</h6>
+                        <p>
+                            Se ejecuta al perder el foco el control (<span>blur</span>). Recibe dos parametros: objeto <span>JQuery</span> para manipular el DOM y el <span>cbu</span>. 
+                        </p>
+                   </section>
+                    <div>
+                            <div id="tabs-control3">
+                                    <ul>
+                                            <li><a href="#tabs-1">Vista</a></li>
+                                      <li><a href="#tabs-2">HTML</a></li>
+                                      <li><a href="#tabs-3">Javascript</a></li>
+    
+                                    </ul>
+                                    <div id="tabs-1">
+                                            <div>
+                                                    <control-cbu id="ComponentCBUnoveno" model="Datos.NumeroCBUnoveno" required="true" label="CBU" on-blur="FormatearCBU"></control-cbu>
+                                                    <p>
+                                                        <label>CBU formatedo personalizado:</label>
+                                                        <span id="tagCbu"></span>
+                                                    </p>
+                                            </div>
+                                    </div>
+                                    <div id="tabs-2">
+                                            <div class="code-example-html">  
+                                    <code>
+                                            <div>
+                                                    <div>&lt;control-cbuid="ComponentCBUnoveno" model="Datos.NumeroCBUnoveno" required="true" label="CBU" <br> on-blur="FormatearCBU"&gt;&lt;/control-cbu&gt;</div>
+                                                    <div>&lt;p&gt;</div>
+                                                    <div>&lt;label&gt;CBU formatedo personalizado:&lt;/label&gt;</div>
+                                                    <div>&lt;span id="tagCbu"&gt;&lt;/span&gt;</div>
+                                                    <div>&lt;/p&gt;</div>
+                                                    </div>
+                                    </code>
+                                       </div>     
+                                           
+                                    </div>
+     
+                                    <div id="tabs-3">
+                                            <div class="code-example">                      
+    <pre>
+    $scope.Datos = {
+        NumeroCBUnoveno:""
+    };
+
+    $scope.FormatearCBU = function(elm,cbu){
+        var txt = "";
+        txt = cbu.split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g, '$1 ');
+        txt = txt.split('').reverse().join('').replace(/^[\.]/, '');
+        $("#tagCbu").text(txt);
+    }
+    </pre>     
+                                            </div>
+                                           
+                                    </div>
+                                  
+                                  </div>
+                      
+                    </div>
+                    <hr>
+                    <button type="button" id="disabled" ng-click="Desactivar()">Desactivar</button>
+                    <input type="submit" id="env" name="env" value="enviar" class="btn btn-success" />
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script
+src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/controlCBU.js"></script>
+<script type="text/javascript">
+    $("#tabs-control1,#tabs-control2,#tabs-control3").tabs();
+
+    angular.module('myApp')
+        .controller('VistaController', VistaController);
+
+    function VistaController($scope) {
+
+        $scope.Datos = {
+            NumeroCBUuno: "2850590940090418135201",
+            NumeroCBUunoError: "2850590940090418135205",
+            NumeroCBUdos:""
+        };
+
+        $scope.FormatearCBU = function(elm,cbu){
+            var txt = "";
+            txt = cbu.split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g, '$1 ');
+            txt = txt.split('').reverse().join('').replace(/^[\.]/, '');
+            $("#tagCbu").text(txt);
+        }
+       
+     
+        $scope.Activar = function(){
+            $scope.ComponentCBUdos.Disabled(false);     
+        }
+
+        $scope.Desactivar = function(){
+            $scope.ComponentCBUdos.Disabled(true);     
+        }
+
+        $scope.AgregarClase = function(cls){
+            $scope.ComponentCBUtres.AddClass(cls);     
+        }
+
+        $scope.Quitarsela = function(cls){
+            $scope.ComponentCBUtres.RemoveClass(cls);     
+        }
+
+        $scope.Inicio = function(){
+            $scope.ComponentCBUdos.Required(true);
+        }
+
+        $scope.Enviar = function (event) {
+            var s = $scope;
+        }
+
+      
+            
+      
+           
+       
+    }
+
+</script>
+
+
+</html>
