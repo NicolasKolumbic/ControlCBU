@@ -66,3 +66,15 @@ h6{
     background-color: #e6b7cb80 !important;
     border:2px solid rgb(241, 92, 92);
 }
+
+control-cbu{
+    width: 488px;
+}
+
+.blueLabel{
+    color: #4fb1eb;
+}
+
+.blueInput input{
+    border: 1px solid #4fb1eb;
+}

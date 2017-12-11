@@ -39,15 +39,15 @@
                         <div class="code-example">                      
     <pre>
         $scope.Datos = {
-            NumeroCBUuno: "2850590940090418135201",
-            NumeroCBUunoError: "2850590940090418135205" 
+            NumeroCBUone: "2850590940090418135201",
+            NumeroCBUoneError: "2850590940090418135205" 
         }
     </pre>     
                         </div>
                         <h5>Código: <strong>HTML de Vista</strong></h5>
                         <div class="code-example">                      
                                 <pre>
-    &lt;control-cbu id="ComponentCBUuno" model="Datos.NumeroCBUuno" label="CBU"&gt;&lt;/control-cbu&gt;
+    &lt;control-cbu id="ComponentCBUone" model="Datos.NumeroCBUone" label="CBU"&gt;&lt;/control-cbu&gt;
                                 </pre>     
                         </div>
                         <p>
@@ -60,20 +60,20 @@
                     <section>
                         <h4><i class="fa fa-check" aria-hidden="true"></i>CBU Correcto</h4>
                         <div>
-                            <control-cbu id="ComponentCBUuno" model="Datos.NumeroCBUuno" label="CBU"></control-cbu>
+                            <control-cbu id="ComponentCBUone" model="Datos.NumeroCBUone" label="CBU"></control-cbu>
                         </div>
                     </section>
                    <section>
                         <h4><i class="fa fa-exclamation-circle" aria-hidden="true"></i>CBU Incorrecto</h4>
                         <p>Por defecto el error se ubica por debajo del campo</p>
                         <div>
-                            <control-cbu id="ComponentCBUunoError" model="Datos.NumeroCBUunoError" label="CBU"></control-cbu>
+                            <control-cbu id="ComponentCBUoneError" model="Datos.NumeroCBUoneError" label="CBU"></control-cbu>
                         </div>
                    </section>
                     <hr>
                   
                     <section>
-                        <h4><i class="fa fa-child" aria-hidden="true"></i> Instancia del Objeto CbuControl en el $Scope</h4>
+                        <h4><i class="fa fa-clone" aria-hidden="true"></i> Instancia del Objeto CbuControl en el $Scope</h4>
                         <p>Una de las cuestiones que sucedia en <span>AS DIRECT</span> era la imposibilidad de cambiar un estado dentro del controlador Angular.js, o mejor dicho. Los controles desarrollados no tiene tales opciones. Por ejemplo dependiendo de una configuración se desactive o active un control. Esta fue una mejora a plantear </p>
                         <p>Como comente anteriormente cada vez que se crea una instancia del control <span>control-cbu</span> se génera una instancia de la clase Javascript <span>cbuControl</span> dentro del <span>$scope</span> que contiene el control. </p>
                         <div class="code-example">                      
@@ -94,10 +94,16 @@
 
                                         </ul>
                                         <div id="tabs-1">
-                                                <div>
-                                                        <control-cbu id="ComponentCBUdos" model="Datos.NumeroCBUdos" label="CBU" ></control-cbu>
-                                                        <button type="button" id="btnActivar" ng-click="Activar()">Activar</button>
-                                                        <button type="button" id="btnDesactivar" ng-click="Desactivar()">Desactivar</button>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                            <control-cbu id="ComponentCBUdos" model="Datos.NumeroCBUdos" label="CBU" ></control-cbu>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                            <button type="button" id="btnActivar" class="btn btn-success" ng-click="Activar()">Activar</button>
+                                                            <button type="button" id="btnDesactivar" class="btn btn-success" ng-click="Desactivar()">Desactivar</button>
+                                                    </div>
+                                                       
+                                                      
                                                 </div>
                                         </div>
                                         <div id="tabs-2">
@@ -237,7 +243,46 @@
                         </div>
                         <p>
                                 <control-cbu id="ComponentCBUoctavo" model="Datos.NumeroCBUoctavo" label="CBU" readonly="true"></control-cbu>
-                        </p>           
+                        </p>  
+                        <hr>
+                        <h6>label-class y input-content-class</h6>
+                        <p>
+                            El primero define una clase <span>CSS</span> para la etiqueta <span>label</span>. El segundo define una clase tambi&etilde;n para el contenedor del <span>input</span>, es decir la clase afectar&atilde; al contenedor pero no al <span>input</span>; para que afecte al input se debe contruir una clase de forma descendente al input, por ejemplo: <span>.MyCustomClass input</span>.
+                        </p>
+                        <div id="tabs-control2">
+                                <ul>
+                                        <li><a href="#tabs-1">Vista</a></li>
+                                  <li><a href="#tabs-2">HTML</a></li>
+                                  <li><a href="#tabs-3">CSS</a></li>
+                                </ul>
+                                <div id="tabs-1">
+                                        <div>
+                                                <control-cbu id="ComponentCBUdecimo" model="Datos.NumeroCBUdecimo" label="CBU" label-class="col-xs-12 col-sm-12 col-md-2 col-lg-2 blueLabel" input-content-class="col-xs-12 col-sm-12 col-md-2 col-lg-2 blueInput"></control-cbu>
+                                        </div> 
+                                </div>
+                                <div id="tabs-2">
+                                        <div class="code-example-html">  
+                                                <code>
+                                                    
+                                                        &lt;div&gt;<br>
+                                                        <code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span>&lt;control-cbu id=&quot;ComponentCBUdecimo&quot; model=&quot;Datos.NumeroCBUdecimo&quot; label-class=&quot;col-xs-12 col-sm-12 col-md-2 col-lg-2 blueLabel&quot; input-content-class=&quot;col-xs-12 col-sm-12 col-md-10 col-lg-10 blueInput&quot; &gt;&lt;/control-cbu&gt;</span><br>
+                                                        &lt;/div&gt;
+                                                </code>
+                                        </div>
+                                </div>
+                                <div id="tabs-3">
+<pre>
+        .blueLabel{
+            color: #4fb1eb;
+        }
+        
+        .blueInput input{
+            border: 1px solid #4fb1eb;
+        }
+</pre>
+                                </div>
+                       
+                                 
                     </section>
                     <hr>
                    <section>
@@ -362,7 +407,7 @@ $scope.Quitarsela = function(cls)
                         <h4><i class="fa fa-bolt" aria-hidden="true"></i>Eventos</h4>
                         <h6>on-blur</h6>
                         <p>
-                            Se ejecuta al perder el foco el control (<span>blur</span>). Recibe dos parametros: objeto <span>JQuery</span> para manipular el DOM y el <span>cbu</span>. 
+                            Se ejecuta al perder el foco el control (<span>blur</span>). Recibe dos parametros: objeto para manipular el DOM y el <span>cbu</span>. 
                         </p>
                    </section>
                     <div>
@@ -419,7 +464,78 @@ $scope.Quitarsela = function(cls)
                       
                     </div>
                     <hr>
-                    <button type="button" id="disabled" ng-click="Desactivar()">Desactivar</button>
+                    
+                    <section>
+                         <h6>build-complete</h6>
+                         <p>
+                             Se ejecuta una vez se contruye el control por completo. En cierta situaciones se ejecuta un sentencia exterior al control y al no haber finalizado <span>angular</span> de contruir el control no tiene efecto o tira un error. Este es el objetivo del evento, asegurarse que se ejecute una vez se haya finalizado la construcci&otilde;n del control. 
+                         </p>
+                    </section>
+                    <div>
+                            <div id="tabs-control5">
+                                    <ul>
+                                            <li><a href="#tabs-1">Vista</a></li>
+                                      <li><a href="#tabs-2">HTML</a></li>
+                                      <li><a href="#tabs-3">Javascript</a></li>
+    
+                                    </ul>
+                                    <div id="tabs-1">
+                                        <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                                        <control-cbu id="ComponentCBUeleven" model="Datos.NumeroCBUeleven"  label="CBU" build-complete="Construido"></control-cbu>
+                                                       
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                                       
+                                                                <label>CBU formatedo personalizado:</label>
+                                                                <span id="tagCbu2"></span>
+                                                            
+                                                </div>
+                                        </div>
+                                           
+                                    </div>
+                                    <div id="tabs-2">
+                                            <div class="code-example-html">  
+                                    <code>
+                                            <div>
+                                                   
+                                                            <div>&lt;divclass="col-xs-12 col-sm-12 col-md-6 col-lg-6"&gt;</div>
+                                                            <div>&lt;control-cbu id="ComponentCBUeleven" model="Datos.NumeroCBUeleven" label="CBU" build-complete="Construido"&gt;&lt;/control-cbu&gt;</div>
+                                                            <div>&nbsp;</div>
+                                                            <div>&lt;/div&gt;</div>
+                                                            <div>&lt;divclass="col-xs-12 col-sm-12 col-md-6 col-lg-6"&gt;</div>
+                                                            <div>&nbsp;</div>
+                                                            <div>&lt;label&gt;CBU formatedo personalizado:&lt;/label&gt;</div>
+                                                            <div>&lt;spanid="tagCbu2"&gt;&lt;/span&gt;</div>
+                                                            <div>&nbsp;</div>
+                                                            <div>&lt;/div&gt;</div>
+                                                            
+                                            </div>
+                                    </code>
+                                       </div>     
+                                           
+                                    </div>
+     
+                                    <div id="tabs-3">
+                                            <div class="code-example">                      
+    <pre>
+    $scope.Datos = {
+        NumeroCBUeleven:""
+    };
+
+    $scope.Construido = function(){
+        $("#tagCbu2").text("Control CBU Construido");
+    }
+    </pre>     
+                                            </div>
+                                           
+                                    </div>
+                                  
+                                  </div>
+                      
+                    </div>
+                     <div>
+                   
                     <input type="submit" id="env" name="env" value="enviar" class="btn btn-success" />
                 </form>
             </div>
@@ -433,7 +549,7 @@ src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhO
 <script type="text/javascript" src="js/angular.min.js"></script>
 <script type="text/javascript" src="js/controlCBU.js"></script>
 <script type="text/javascript">
-    $("#tabs-control1,#tabs-control2,#tabs-control3").tabs();
+    $("#tabs-control1,#tabs-control2,#tabs-control3,#tabs-control5").tabs();
 
     angular.module('myApp')
         .controller('VistaController', VistaController);
@@ -441,16 +557,29 @@ src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhO
     function VistaController($scope) {
 
         $scope.Datos = {
-            NumeroCBUuno: "2850590940090418135201",
-            NumeroCBUunoError: "2850590940090418135205",
-            NumeroCBUdos:""
+            NumeroCBUone: "2850590940090418135201",
+            NumeroCBUoneError: "2850590940090418135205",
+            NumeroCBUdos:"",
+            NumeroCBUtres:"",
+            NumeroCBUcuatro:"",
+            NumeroCBUcinco:"",
+            NumeroCBUseis:"",
+            NumeroCBUsiete:"",
+            NumeroCBUocho:"",
+            NumeroCBUdos:"",
+            NumeroCBUdos:"",
         };
 
         $scope.FormatearCBU = function(elm,cbu){
+            debugger;
             var txt = "";
             txt = cbu.split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g, '$1 ');
             txt = txt.split('').reverse().join('').replace(/^[\.]/, '');
             $("#tagCbu").text(txt);
+        }
+
+        $scope.Construido = function(){
+            $("#tagCbu2").text("Control CBU Construido");
         }
        
      

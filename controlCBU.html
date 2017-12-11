@@ -1,6 +1,6 @@
 <div class="CCBU" ng-class="{'CCBU-error-marked':showError && errorMarked}">
-    <label for="{{id}}" class="control-label">{{label}}</label> 
-    <div class="CCBU-content" ng-class="{'es-obligatorio': required }">
+    <label for="{{id}}" class="control-label {{labelClass}}">{{label}}</label> 
+    <div class="CCBU-content {{inputContentClass}}" ng-class="{'es-obligatorio': required }">
             <input type="text" id="{{id}}" name="{{id}}" ng-model="model" class="form-control {{cssclass}}" ng-required="{{required}}" ng-readonly="{{readonly}}" ng-disabled="setdisabled" ng-change="actualizarModelo('{{Setting.modelName}}','{{id}}')"  /> 
             <div class="CCBU-show-errors {{Setting.typeError}}" ng-show="showError">     
                 <p>{{message}}</p>

@@ -3,13 +3,21 @@
     font-size: 18px;
 }
 
+control-cbu{
+    display: inline-block;
+    width: 100%;
+    
+}
+
 .CCBU{
     display: inline-block;
+    width: 100%;
 }
 
 .CCBU label{
     margin-top: 7px;
     padding-right: 10px;
+    text-align: right;
 }
 
 .CCBU-content{

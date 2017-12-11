@@ -16,7 +16,9 @@ angular
                     typeError: "@?",
                     errorMarked:"=?",
                     onBlur: "=?",
-                    buildComplete: "=?"
+                    buildComplete: "=?",
+                    labelClass: "@?",
+                    inputContentClass: "@?",
                    
                 },
                 templateUrl: './controlCBU.html',
@@ -118,6 +120,8 @@ function CBUcontroller($scope) {
     $scope.buildComplete = angular.isUndefined($scope.buildComplete)?null: $scope.buildComplete;
     $scope.errorMessage = angular.isUndefined($scope.errorMessage)?"": $scope.errorMessage;
     $scope.errorMarked = angular.isUndefined($scope.errorMarked)?"": $scope.errorMarked;
+    $scope.labelClass = angular.isUndefined($scope.labelClass)?"col-xs-12 col-sm-12 col-md-2 col-lg-2":$scope.labelClass;
+    $scope.inputContentClass = angular.isUndefined($scope.inputContentClass)?"col-xs-12 col-sm-12 col-md-10 col-lg-10":$scope.inputContentClass;
     
     $scope.Setting = {
         modelName: "",
@@ -188,8 +192,7 @@ function CBUcontroller($scope) {
                 if (value.value != "") {
                     if (!$scope.Methods.Validate(value.value,true,$scope.id)){
                         instance._valid = false;
-                       
-                        //return false;
+                        return false;
                     } 
                     $scope.$apply(function () {
                         $scope.message = CONSTANTES.ERRORS.START;
@@ -198,7 +201,7 @@ function CBUcontroller($scope) {
                     instance._valid = true;
                 }else if(value.value.length == 0 && $scope.required){
                     $scope.Methods.ShowError(CONSTANTES.ERRORS.OBLIGATORIO,true);
-                    //return false;
+                    return false;
                 }
             } else if (value.value == "" && !value.res) {
                 this.value = "";
