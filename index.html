@@ -79,10 +79,10 @@
                         <div class="code-example">                      
 <pre>
     <span>// Desactiva el control.</span>
-    $scope.ComponentCBUdos.Disabled(true);
+    $scope.ComponentCBUtwo.Disabled(true);
     <br>
     <span>// Activa el control.</span>
-    $scope.ComponentCBUdos.Disabled(false);
+    $scope.ComponentCBUtwo.Disabled(false);
 </pre>     
                         </div>
                         <section>
@@ -96,7 +96,7 @@
                                         <div id="tabs-1">
                                                 <div class="row">
                                                     <div class="col-sm-6">
-                                                            <control-cbu id="ComponentCBUdos" model="Datos.NumeroCBUdos" label="CBU" ></control-cbu>
+                                                            <control-cbu id="ComponentCBUtwo" model="Datos.NumeroCBUtwo" label="CBU" ></control-cbu>
                                                     </div>
                                                     <div class="col-sm-6">
                                                             <button type="button" id="btnActivar" class="btn btn-success" ng-click="Activar()">Activar</button>
@@ -111,7 +111,7 @@
                                         <code>
                                             
                                                 &lt;div&gt;<br>
-                                                <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUdos&quot; model=&quot;Datos.NumeroCBUdos&quot; label=&quot;CBU&quot; &gt;&lt;/control-cbu&gt;</span><br>
+                                                <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUtwo&quot; model=&quot;Datos.NumeroCBUtwo&quot; label=&quot;CBU&quot; &gt;&lt;/control-cbu&gt;</span><br>
                                                 &nbsp;&nbsp;&lt;button type=&quot;button&quot; id=&quot;btnActivar&quot; ng-click=&quot;Activar()&quot;&gt;Activar&lt;/button&gt;<br>
                                                 &nbsp;&nbsp;&lt;button type=&quot;button&quot; id=&quot;btnDesactivar&quot; ng-click=&quot;Desactivar()&quot;&gt;Desactivar&lt;/button&gt;<br>
                                                 &lt;/div&gt;
@@ -123,15 +123,15 @@
                                                 <div class="code-example">                      
 <pre>
     $scope.Datos = {
-        NumeroCBUdos:""
+        NumeroCBUtwo:""
     }
 
     $scope.Activar = function(){
-        $scope.ComponentCBUdos.Disabled(false);     
+        $scope.ComponentCBUtwo.Disabled(false);     
     }
 
     $scope.Desactivar = function(){
-        $scope.ComponentCBUdos.Disabled(true);     
+        $scope.ComponentCBUtwo.Disabled(true);     
     }
 </pre>     
                                                 </div>
@@ -161,14 +161,13 @@
                         </p>
                         <div class="code-example-html">  
                                 <code>
-                                    
                                         &lt;div&gt;<br>
-                                        <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUcuatro&quot; model=&quot;Datos.NumeroCBUcuatro&quot; label=&quot;CBU&quot; required=&quot;true&quot; &gt;&lt;/control-cbu&gt;</span><br>
+                                        <code>&nbsp;&nbsp;</code><span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUthree&quot; model=&quot;Datos.NumeroCBUthree&quot; label=&quot;CBU&quot; required=&quot;true&quot; &gt;&lt;/control-cbu&gt;</span><br>
                                         &lt;/div&gt;
                                 </code>
                         </div>
                         <p>
-                                <control-cbu id="ComponentCBUcuatro" model="Datos.NumeroCBUcuatro" label="CBU" required="true"></control-cbu>
+                                <control-cbu id="ComponentCBUcuatro" model="Datos.NumeroCBUthree" label="CBU" required="true"></control-cbu>
                         </p>
                         <hr>
                         <h6>setdisabled</h6>
@@ -179,12 +178,12 @@
                                 <code>
                                     
                                         &lt;div&gt;<br>
-                                        <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUcuatro&quot; model=&quot;Datos.NumeroCBUcuatro&quot; label=&quot;CBU&quot; setdisabled=&quot;true&quot; &gt;&lt;/control-cbu&gt;</span><br>
+                                        <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUfour&quot; model=&quot;Datos.NumeroCBUfour&quot; label=&quot;CBU&quot; setdisabled=&quot;true&quot; &gt;&lt;/control-cbu&gt;</span><br>
                                         &lt;/div&gt;
                                 </code>
                         </div>
                         <p>
-                                <control-cbu id="ComponentCBUquinto" model="Datos.NumeroCBUquinto" label="CBU" setdisabled="true"></control-cbu>
+                                <control-cbu id="ComponentCBUfour" model="Datos.NumeroCBUfour" label="CBU" setdisabled="true"></control-cbu>
                         </p>  
                         <hr>
                         <h6>cssclass</h6>
@@ -193,24 +192,23 @@
                         </p>
                         <div class="code-example-html">  
                                 <code>
-                                    
-                                        &lt;div&gt;<br>
-                                        <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUsexto&quot; model=&quot;Datos.NumeroCBUsexto&quot; label=&quot;CBU&quot; cssclass=&quot;blurControl&quot; &gt;&lt;/control-cbu&gt;</span><br>
-                                        &lt;/div&gt;
+                                        <div><code>&nbsp;</code>&lt;div&gt;</div>
+                                        <div><code>&nbsp;&nbsp;</code>&lt;control-cbu id=&quot;ComponentCBUfive&quot; model=&quot;Datos.NumeroCBUfive&quot; label=&quot;CBU&quot; cssclass=&quot;blurControl&quot; &gt;&lt;/control-cbu&gt;</span></div>
+                                        <code>&nbsp;</code>&lt;/div&gt;
                                 </code>
                         </div>
                         <div class="code-example-html">  
                                 <code>
                                     <prev>
                                         .blurControl{<br>
-                                                     background-color: #b7cce680 !important;<br>
-                                                     border:2px solid skyblue;<br>
-                                            }
+                                        <code>&nbsp;&nbsp;</code>background-color: #b7cce680 !important;<br>
+                                        <code>&nbsp;&nbsp;</code>border:2px solid skyblue;<br>
+                                        <code>&nbsp;</code>}
                                     </prev>   
                                 </code>
                         </div>
                         <p>
-                                <control-cbu id="ComponentCBUsexto" model="Datos.NumeroCBUsexto" label="CBU" cssclass="blurControl"></control-cbu>
+                                <control-cbu id="ComponentCBUsix" model="Datos.NumeroCBUsix" label="CBU" cssclass="blurControl"></control-cbu>
                         </p>
                         <hr>
                         <h6>ng-class</h6>
@@ -221,12 +219,23 @@
                                 <code>
                                     
                                         &lt;div&gt;<br>
-                                        <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUseptimo&quot; model=&quot;Datos.NumeroCBUseptimo&quot; label=&quot;CBU&quot; ng-class=&quot;{blurControl:error}&quot; &gt;&lt;/control-cbu&gt;</span><br>
+                                        <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUseven&quot; model=&quot;Datos.NumeroCBUseven&quot; label=&quot;CBU&quot; ng-class=&quot;{redControl:error}&quot; &gt;&lt;/control-cbu&gt;</span><br>
                                         &lt;/div&gt;
                                 </code>
                         </div>
+                        <div class="code-example-html">  
+                                <code>
+                                    <prev>  
+                                        .redControl{<br>
+                                        <code>&nbsp;&nbsp;</code>background-color: #e6b7cb80 !important;<br>
+                                        <code>&nbsp;&nbsp;</code> border:2px solid rgb(241, 92, 92);<br>
+                                        <code>&nbsp;</code>}
+                                    </prev>   
+                                </code>
+                        </div>
+                        
                         <p>
-                                <control-cbu id="ComponentCBUseptimo" model="Datos.NumeroCBUseptimo" label="CBU" ng-class="{redControl:true}"></control-cbu>
+                                <control-cbu id="ComponentCBUseven" model="Datos.NumeroCBUseven" label="CBU" ng-class="{redControl:true}"></control-cbu>
                         </p>
                         <hr>
                         <h6>readonly</h6>
@@ -237,12 +246,12 @@
                                 <code>
                                     
                                         &lt;div&gt;<br>
-                                        <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUoctavo&quot; model=&quot;Datos.NumeroCBUoctavo&quot; label=&quot;CBU&quot; readonly=&quot;true&quot; &gt;&lt;/control-cbu&gt;</span><br>
+                                        <span>&nbsp;&nbsp;&lt;control-cbu id=&quot;ComponentCBUeight&quot; model=&quot;Datos.NumeroCBUeight&quot; label=&quot;CBU&quot; readonly=&quot;true&quot; &gt;&lt;/control-cbu&gt;</span><br>
                                         &lt;/div&gt;
                                 </code>
                         </div>
                         <p>
-                                <control-cbu id="ComponentCBUoctavo" model="Datos.NumeroCBUoctavo" label="CBU" readonly="true"></control-cbu>
+                                <control-cbu id="ComponentCBUeight" model="Datos.NumeroCBUeight" label="CBU" readonly="true"></control-cbu>
                         </p>  
                         <hr>
                         <h6>label-class y input-content-class</h6>
@@ -257,16 +266,14 @@
                                 </ul>
                                 <div id="tabs-1">
                                         <div>
-                                                <control-cbu id="ComponentCBUdecimo" model="Datos.NumeroCBUdecimo" label="CBU" label-class="col-xs-12 col-sm-12 col-md-2 col-lg-2 blueLabel" input-content-class="col-xs-12 col-sm-12 col-md-2 col-lg-2 blueInput"></control-cbu>
+                                                <control-cbu id="ComponentCBUdecimo" model="Datos.NumeroCBUdecimo" label="CBU" label-class="col-xs-12 col-sm-12 col-md-2 col-lg-2 blueLabel" input-content-class="col-xs-12 col-sm-12 col-md-10 col-lg-10 blueInput"></control-cbu>
                                         </div> 
                                 </div>
                                 <div id="tabs-2">
                                         <div class="code-example-html">  
                                                 <code>
                                                     
-                                                        &lt;div&gt;<br>
-                                                        <code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span>&lt;control-cbu id=&quot;ComponentCBUdecimo&quot; model=&quot;Datos.NumeroCBUdecimo&quot; label-class=&quot;col-xs-12 col-sm-12 col-md-2 col-lg-2 blueLabel&quot; input-content-class=&quot;col-xs-12 col-sm-12 col-md-10 col-lg-10 blueInput&quot; &gt;&lt;/control-cbu&gt;</span><br>
-                                                        &lt;/div&gt;
+                                                    <table class='code-table'><tr><td>1</td><td></td></tr><tr><td>2</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;control-cbu</span> <span class='attr'>id</span>=<span class='value'>"ComponentCBUdecimo"</span><span class='tag'>&gt;</span></td></tr><tr><td>3</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;/control-cbu&gt;</span></td></tr><tr><td>4</td><td><span class='tag'>&lt;/div&gt;</span></td></tr></table>
                                                 </code>
                                         </div>
                                 </div>
@@ -346,9 +353,12 @@
                                   <li><a href="#tabs-4">Javascript</a></li>
 
                                 </ul>
-                                <div id="tabs-1">
-                                        <div>
-                                                <control-cbu id="ComponentCBUtres" model="Datos.NumeroCBUtres" label="CBU"></control-cbu>
+                                <div id="tabs-1" class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                                <control-cbu id="ComponentCBUnine" model="Datos.NumeroCBUnine" label="CBU"></control-cbu>
+                                               
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                                 <button type="button" id="btnAddClase" class="btn btn-primary" ng-click="AgregarClase('marked')">Agregar Clase</button>
                                                 <button type="button" id="btnRemoveClase" class="btn btn-primary" ng-click="Quitarsela('marked')">Quitarsela</button>
                                         </div>
@@ -356,13 +366,7 @@
                                 <div id="tabs-2">
                                         <div class="code-example-html">  
                                 <code>
-                                        &lt;control-cbu id="ComponentCBUtres" model="Datos.NumeroCBUtres" label="CBU"&gt;&lt;/control-cbu&gt;<br>
-                                        &lt;button type="button" id="btnAddClase" class="btn btn-primary" ng-click="AgregarClase('marked')"&gt;
-                                        Agregar Clase
-                                        &lt;/button&gt;<br>
-                                        &lt;button type="button" id="btnRemoveClase" class="btn btn-primary" ng-click="Quitarsela('marked')"&gt;
-                                        Quitarsela
-                                        &lt;/button&gt;
+                                    <table class='code-table'><tr><td>1</td><td><span class='tag'>&lt;div</span> <span class='attr'>class</span>=<span class='value'>"col-xs-12 col-sm-12 col-md-6 col-lg-6"</span><span class='tag'>&gt;</span></td></tr><tr><td>2</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;control-cbu</span> <span class='attr'>id</span>=<span class='value'>"ComponentCBUnine"</span> <span class='attr'>label</span>=<span class='value'>"CBU"</span><span class='tag'>&gt;</span></td></tr><tr><td>3</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;/control-cbu&gt;</span></td></tr><tr><td>4</td><td><span class='tag'>&lt;/div&gt;</span></td></tr><tr><td>5</td><td><span class='tag'>&lt;div</span> <span class='attr'>class</span>=<span class='value'>"col-xs-12 col-sm-12 col-md-6 col-lg-6"</span><span class='tag'>&gt;</span></td></tr><tr><td>6</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;button type="button" id="btnAddClase" class="btn btn-primary" ng-click="AgregarClase('marked')"</span> <span class='attr'>type</span>=<span class='value'>"button"</span> <span class='attr'>id</span>=<span class='value'>"btnAddClase"</span><span class='tag'>&gt;</span>Agregar Clase<span class='tag'>&lt;/button&gt;</span></td></tr><tr><td>7</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;button type="button" id="btnRemoveClase" class="btn btn-primary" ng-click="Quitarsela('marked')"</span> <span class='attr'>type</span>=<span class='value'>"button"</span> <span class='attr'>id</span>=<span class='value'>"btnRemoveClase"</span><span class='tag'>&gt;</span>Quitarsela<span class='tag'>&lt;/button&gt;</span></td></tr><tr><td>8</td><td><span class='tag'>&lt;/div&gt;</span></td></tr></table>
                                 </code>
                                    </div>     
                                        
@@ -379,17 +383,17 @@
 <pre>
 $scope.Datos = 
 {
-    NumeroCBUtres:""
+    NumeroCBUnine:""
 }
 
 $scope.AgregarClase = function(cls)
 {
-    $scope.ComponentCBUtres.AddClass(cls);     
+    $scope.ComponentCBUnine.AddClass(cls);     
 }
 
 $scope.Quitarsela = function(cls)
 {
-    $scope.ComponentCBUtres.RemoveClass(cls);     
+    $scope.ComponentCBUnine.RemoveClass(cls);     
 }
 </pre>     
                                         </div>
@@ -419,24 +423,21 @@ $scope.Quitarsela = function(cls)
     
                                     </ul>
                                     <div id="tabs-1">
-                                            <div>
-                                                    <control-cbu id="ComponentCBUnoveno" model="Datos.NumeroCBUnoveno"  label="CBU" on-blur="FormatearCBU"></control-cbu>
-                                                    <p>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                                                        <control-cbu id="ComponentCBUten" model="Datos.NumeroCBUten"  label="CBU" on-blur="FormatearCBU"></control-cbu>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
                                                         <label>CBU formatedo personalizado:</label>
                                                         <span id="tagCbu"></span>
-                                                    </p>
+                                                </div>
                                             </div>
                                     </div>
                                     <div id="tabs-2">
                                             <div class="code-example-html">  
                                     <code>
                                             <div>
-                                                    <div>&lt;control-cbuid="ComponentCBUnoveno" model="Datos.NumeroCBUnoveno" label="CBU" on-blur="FormatearCBU"&gt;&lt;/control-cbu&gt;</div>
-                                                    <div>&lt;p&gt;</div>
-                                                    <div>&lt;label&gt;CBU formatedo personalizado:&lt;/label&gt;</div>
-                                                    <div>&lt;span id="tagCbu"&gt;&lt;/span&gt;</div>
-                                                    <div>&lt;/p&gt;</div>
-                                                    </div>
+                                                <table class='code-table'><tr><td>1</td><td><span class='tag'>&lt;div</span> <span class='attr'>class</span>=<span class='value'>"row"</span><span class='tag'>&gt;</span></td></tr><tr><td>2</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;div</span> <span class='attr'>class</span>=<span class='value'>"col-xs-12 col-sm-12 col-md-5 col-lg-5"</span><span class='tag'>&gt;</span></td></tr><tr><td>3</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;control-cbu</span> <span class='attr'>id</span>=<span class='value'>"ComponentCBUten"</span> <span class='attr'>label</span>=<span class='value'>"CBU"</span> <span class='attr'>on-blur</span>=<span class='value'>"FormatearCBU"</span><span class='tag'>&gt;</span></td></tr><tr><td>4</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;/control-cbu&gt;</span></td></tr><tr><td>5</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;/div&gt;</span></td></tr><tr><td>6</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;div</span> <span class='attr'>class</span>=<span class='value'>"col-xs-12 col-sm-12 col-md-7 col-lg-7"</span><span class='tag'>&gt;</span></td></tr><tr><td>7</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;label</span><span class='tag'>&gt;</span>CBU formatedo personalizado:<span class='tag'>&lt;/label&gt;</span></td></tr><tr><td>8</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;span</span> <span class='attr'>id</span>=<span class='value'>"tagCbu"</span><span class='tag'>&gt;</span></td></tr><tr><td>9</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;/span&gt;</span></td></tr><tr><td>10</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;/div&gt;</span></td></tr><tr><td>11</td><td><span class='tag'>&lt;/div&gt;</span></td></tr></table>
                                     </code>
                                        </div>     
                                            
@@ -446,7 +447,7 @@ $scope.Quitarsela = function(cls)
                                             <div class="code-example">                      
     <pre>
     $scope.Datos = {
-        NumeroCBUnoveno:""
+        NumeroCBUten:""
     };
 
     $scope.FormatearCBU = function(elm,cbu){
@@ -499,16 +500,8 @@ $scope.Quitarsela = function(cls)
                                     <code>
                                             <div>
                                                    
-                                                            <div>&lt;divclass="col-xs-12 col-sm-12 col-md-6 col-lg-6"&gt;</div>
-                                                            <div>&lt;control-cbu id="ComponentCBUeleven" model="Datos.NumeroCBUeleven" label="CBU" build-complete="Construido"&gt;&lt;/control-cbu&gt;</div>
-                                                            <div>&nbsp;</div>
-                                                            <div>&lt;/div&gt;</div>
-                                                            <div>&lt;divclass="col-xs-12 col-sm-12 col-md-6 col-lg-6"&gt;</div>
-                                                            <div>&nbsp;</div>
-                                                            <div>&lt;label&gt;CBU formatedo personalizado:&lt;/label&gt;</div>
-                                                            <div>&lt;spanid="tagCbu2"&gt;&lt;/span&gt;</div>
-                                                            <div>&nbsp;</div>
-                                                            <div>&lt;/div&gt;</div>
+                                                <table class='code-table'><tr><td>1</td><td><span class='tag'>&lt;div</span> <span class='attr'>class</span>=<span class='value'>"row"</span><span class='tag'>&gt;</span></td></tr><tr><td>2</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;div</span> <span class='attr'>class</span>=<span class='value'>"col-xs-12 col-sm-12 col-md-6 col-lg-6"</span><span class='tag'>&gt;</span></td></tr><tr><td>3</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;control-cbu</span> <span class='attr'>id</span>=<span class='value'>"ComponentCBUeleven"</span> <span class='attr'>label</span>=<span class='value'>"CBU"</span> <span class='attr'>build-complete</span>=<span class='value'>"Construido"</span><span class='tag'>&gt;</span></td></tr><tr><td>4</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;/control-cbu&gt;</span></td></tr><tr><td>5</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;/div&gt;</span></td></tr><tr><td>6</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;div</span> <span class='attr'>class</span>=<span class='value'>"col-xs-12 col-sm-12 col-md-6 col-lg-6"</span><span class='tag'>&gt;</span></td></tr><tr><td>7</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;label</span><span class='tag'>&gt;</span>CBU formatedo personalizado:<span class='tag'>&lt;/label&gt;</span></td></tr><tr><td>8</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;span</span> <span class='attr'>id</span>=<span class='value'>"tagCbu2"</span><span class='tag'>&gt;</span></td></tr><tr><td>9</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;/span&gt;</span></td></tr><tr><td>10</td><td><code>&nbsp;&nbsp;&nbsp;&nbsp;</code><span class='tag'>&lt;/div&gt;</span></td></tr><tr><td>11</td><td><span class='tag'>&lt;/div&gt;</span></td></tr></table>
+                                               
                                                             
                                             </div>
                                     </code>
@@ -534,9 +527,290 @@ $scope.Quitarsela = function(cls)
                                   </div>
                       
                     </div>
+                    <hr>
+                    <section>
+                            <h4>Manejo de errores</h4>
+                            <p>
+                                Para el maneno de error el control dispone de algunas propiedades. 
+                            </p>
+                            <h6>typeError</h6>
+                            <p>
+                                Define donde se mostrara el error; puede mostrarse por debajo del campo (el lugar por defecto) o en linea a la derecha del campo. <strong>En el ejemplo siguiente se agrego una clase css que controle el ancho del mensaje de error. Comento esto porque si bien tiene clases css no se va ajustar a todas la necesidades, por lo tanto en esos casos pisar o agregar clases es lo recomendable</strong>.
+                                En el siguiente gr&atilde;fico se muestra como funciona la estructura HTML del control.
+                            </p>
+                            <div>
+                                <figure class="text-center">
+                                    <img src="image2.jpg" />
+                                </figure>
+                            </div>
+                            <div id="tabs-control5">
+                                    <ul>
+                                      <li><a href="#tabs-1">Vista</a></li>
+                                      <li><a href="#tabs-2">HTML</a></li>
+                                      <li><a href="#tabs-3">Javascript</a></li>
+                                      <li><a href="#tabs-4">CSS</a></li>
+                                    </ul>
+                                    <div id="tabs-1">
+                                        <div class="row tipoErrores">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <control-cbu id="ComponentCBUtwelve" model="Datos.NumeroCBUtwelve"  label="CBU" type-error="inline"></control-cbu>
+                                                       
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <control-cbu id="ComponentCBUtwelve" model="Datos.NumeroCBUtwelve"  label="CBU" type-error="down"></control-cbu>
+                                                            
+                                                </div>
+                                        </div>
+                                           
+                                    </div>
+                                    <div id="tabs-2">
+                                            <div class="code-example-html">  
+                                    <code>
+                                        <table class="code-table">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                        <div><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"row tipoErrores"</span><span class="tag">&gt;</span></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>
+                                                    <code>&nbsp;&nbsp;</code><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"col-xs-12 col-sm-12 col-md-12 col-lg-12"</span><span class="tag">&gt;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>
+                                                    <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="tag">&lt;control-cbu</span> <span class="attr">id</span>=<span class="value">"ComponentCBUtwelve"</span> <span class="attr">model</span>=<span class="value">"Datos.NumeroCBUtwelve"</span> <span class="attr">label</span>=<span class="value">"CBU"</span> <span class="attr">type-error</span>=<span class="value">"inline"</span><span class="tag">&gt;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>
+                                                    <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="tag">&lt;/control-cbu&gt;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    5
+                                                </td>
+                                                <td>
+                                                        <code>&nbsp;&nbsp;</code><span class="tag">&lt;/div&gt;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>
+                                                    <code>&nbsp;&nbsp;</code><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"col-xs-12 col-sm-12 col-md-12 col-lg-12"</span><span class="tag">&gt;</span> 
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>
+                                                    <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="tag">&lt;control-cbu</span> <span class="attr">id</span>=<span class="value">"ComponentCBUtwelve"</span> <span class="attr">model</span>=<span class="value">"Datos.NumeroCBUtwelve"</span> <span class="attr">label</span>=<span class="value">"CBU"</span> <span class="attr">type-error</span>=<span class="value">"down"</span><span class="tag">&gt;</span>
+                                                </td>
+                                            </tr> 
+                                            <tr>
+                                                <td>8</td>
+                                                <td>
+                                                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="tag">&lt;/control-cbu&gt;</span>
+                                                  
+                                                     
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    9
+                                                </td>
+                                                <td>
+                                                        <code>&nbsp;&nbsp;</code><span class="tag">&lt;/div&gt;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>
+                                                    <span class="tag">&lt;/div&gt;</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div>
+                                           
+                                            
+                                            
+                                           
+                                            
+                                            
+                                          
+                                           
+                                            
+                                        </div>
+                                    </code>
+                                       </div>     
+                                           
+                                    </div>
+     
+                                    <div id="tabs-3">
+                                            <div class="code-example">                      
+    <pre>
+    $scope.Datos = {
+        NumeroCBUtwelve:""
+    };
+
+    </pre>     
+                                            </div>
+                                           
+                                    </div>
+                                    <div id="tabs-4">
+                                            <div class="code-example">                      
+<pre>
+    .tipoErrores control-cbu{
+        width: 100%;
+    }
+    
+    .tipoErrores > div + div control-cbu .CCBU-content{
+        max-width: 443px;
+    }
+
+</pre>     
+                                                                                            </div>
+                                    </div>
+                                  
+                                  </div>
+                                  <hr>
+                                  <h6>errorMarked</h6>
+                                  <p>
+                                     Determina que al darse un error en el control el mismo tenga el borde color rojo (<span>border CSS</span>) y el <span>label</span> tambien.
+                                  </p>
+                                  <div id="tabs-control5">
+                                    <ul>
+                                      <li><a href="#tabs-1">Vista</a></li>
+                                      <li><a href="#tabs-2">HTML</a></li>
+                                      <li><a href="#tabs-3">Javascript</a></li>
+                                      <li><a href="#tabs-4">CSS</a></li>
+                                    </ul>
+                                    <div id="tabs-1">
+                                        <div class="row tipoErrores">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <control-cbu id="ComponentCBUtwelve" model="Datos.NumeroCBUtwelve"  label="CBU" type-error="inline" error-marked="true"></control-cbu>
+                                                       
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <control-cbu id="ComponentCBUtwelve" model="Datos.NumeroCBUtwelve"  label="CBU" type-error="down" error-marked="true"></control-cbu>
+                                                            
+                                                </div>
+                                        </div>
+                                           
+                                    </div>
+                                    <div id="tabs-2">
+                                            <div class="code-example-html">  
+                                    <code>
+                                        <table class="code-table">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"row tipoErrores"</span><span class="tag">&gt;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>
+                                                    <code>&nbsp;&nbsp;</code><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"col-xs-12 col-sm-12 col-md-12 col-lg-12"</span><span class="tag">&gt;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>
+                                                    <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="tag">&lt;control-cbu</span> <span class="attr">id</span>=<span class="value">"ComponentCBUtwelve"</span> <span class="attr">model</span>=<span class="value">"Datos.NumeroCBUtwelve"</span> <span class="attr">label</span>=<span class="value">"CBU"</span> <span class="attr">type-error</span>=<span class="value">"inline"</span><span class="tag">&gt;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>
+                                                    <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="tag">&lt;/control-cbu&gt;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    5
+                                                </td>
+                                                <td>
+                                                        <code>&nbsp;&nbsp;</code><span class="tag">&lt;/div&gt;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>
+                                                    <code>&nbsp;&nbsp;</code><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="value">"col-xs-12 col-sm-12 col-md-12 col-lg-12"</span><span class="tag">&gt;</span> 
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>
+                                                    <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="tag">&lt;control-cbu</span> <span class="attr">id</span>=<span class="value">"ComponentCBUtwelve"</span> <span class="attr">model</span>=<span class="value">"Datos.NumeroCBUtwelve"</span> <span class="attr">label</span>=<span class="value">"CBU"</span> <span class="attr">type-error</span>=<span class="value">"down"</span><span class="tag">&gt;</span>
+                                                </td>
+                                            </tr> 
+                                            <tr>
+                                                <td>8</td>
+                                                <td>
+                                                        <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="tag">&lt;/control-cbu&gt;</span>
+                                                  
+                                                     
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    9
+                                                </td>
+                                                <td>
+                                                        <code>&nbsp;&nbsp;</code><span class="tag">&lt;/div&gt;</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>
+                                                    <span class="tag">&lt;/div&gt;</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div>     
+                                        </div>
+                                    </code>
+                                       </div>     
+                                           
+                                    </div>
+     
+                                    <div id="tabs-3">
+                                            <div class="code-example">                      
+    <pre>
+    $scope.Datos = {
+        NumeroCBUtwelve:""
+    };
+
+    </pre>     
+                                            </div>
+                                           
+                                    </div>
+                                    <div id="tabs-4">
+                                            <div class="code-example">                      
+<pre>
+    .tipoErrores control-cbu{
+        width: 100%;
+    }
+    
+    .tipoErrores > div + div control-cbu .CCBU-content{
+        max-width: 443px;
+    }
+
+</pre>     
+                                                                                            </div>
+                                    </div>
+                                  
+                                  </div>
+                    </section>
                      <div>
                    
-                    <input type="submit" id="env" name="env" value="enviar" class="btn btn-success" />
+                 
                 </form>
             </div>
 
@@ -559,15 +833,17 @@ src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhO
         $scope.Datos = {
             NumeroCBUone: "2850590940090418135201",
             NumeroCBUoneError: "2850590940090418135205",
-            NumeroCBUdos:"",
-            NumeroCBUtres:"",
-            NumeroCBUcuatro:"",
-            NumeroCBUcinco:"",
-            NumeroCBUseis:"",
-            NumeroCBUsiete:"",
-            NumeroCBUocho:"",
-            NumeroCBUdos:"",
-            NumeroCBUdos:"",
+            NumeroCBUtwo:"",
+            NumeroCBUthree:"",
+            NumeroCBUfour:"",
+            NumeroCBUfive:"",
+            NumeroCBUsix:"",
+            NumeroCBUseven:"",
+            NumeroCBUeight:"",
+            NumeroCBUnine:"",
+            NumeroCBUten:"",
+            NumeroCBUeleven:"",
+            NumeroCBUtwelve:"2850590940090418135205"
         };
 
         $scope.FormatearCBU = function(elm,cbu){
@@ -584,19 +860,19 @@ src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhO
        
      
         $scope.Activar = function(){
-            $scope.ComponentCBUdos.Disabled(false);     
+            $scope.ComponentCBUtwo.Disabled(false);     
         }
 
         $scope.Desactivar = function(){
-            $scope.ComponentCBUdos.Disabled(true);     
+            $scope.ComponentCBUtwo.Disabled(true);     
         }
 
         $scope.AgregarClase = function(cls){
-            $scope.ComponentCBUtres.AddClass(cls);     
+            $scope.ComponentCBUnine.AddClass(cls);     
         }
 
         $scope.Quitarsela = function(cls){
-            $scope.ComponentCBUtres.RemoveClass(cls);     
+            $scope.ComponentCBUnine.RemoveClass(cls);     
         }
 
         $scope.Inicio = function(){

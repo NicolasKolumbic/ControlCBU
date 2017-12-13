@@ -78,3 +78,42 @@ control-cbu{
 .blueInput input{
     border: 1px solid #4fb1eb;
 }
+
+.tipoErrores control-cbu{
+    width: 100%;
+}
+
+.tipoErrores > div + div control-cbu .CCBU-content{
+    max-width: 443px;
+}
+
+.code-table tr td:first-child{
+    width: 30px;
+    text-align: center;
+    border-right: 2px solid #30bb0d;
+    padding: 3px 0;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.code-table tr td + td{
+    padding:0 10px;
+}
+
+.tag{
+    color: #e62e5c;
+    font-weight: 700;
+}
+
+.attr{
+    color: #4fb1eb;
+    font-weight: 700;
+}
+
+.value{
+    color: #30bb0d;
+    font-weight: 700;
+}
+

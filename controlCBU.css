@@ -6,7 +6,7 @@
 control-cbu{
     display: inline-block;
     width: 100%;
-    
+
 }
 
 .CCBU{
@@ -29,6 +29,7 @@ control-cbu{
     display: inline-block;
     vertical-align: middle;
     color: rgb(230, 5, 5);
+    font-size: 14px;
 }
 
 .CCBU-down-error{

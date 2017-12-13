@@ -70,10 +70,16 @@ angular
                     elm.on('keydown', function (event) {
                         scope.Methods.keyUp.call(this, event);
                     })
-                   
-                    elm.find('input').on('blur', function (event) {
-                        scope.Methods.blur.call(this, event);
+
+                    elm.on('keypress', function(event){
+                        if(event.which > 105){
+                            return false;
+                        }
                     });
+                   
+                   /* elm.find('input').on('blur', function (event) {
+                        scope.Methods.blur.call(this, event);
+                    });*/
                   
                     if(scope.buildComplete) scope.buildComplete();
                   
@@ -221,15 +227,17 @@ function CBUcontroller($scope) {
 
 
         },
-        keyUp: function (event, ModelCtrl) {
-
+        keyUp: function (event) {
+  
+            console.log(event.which);
             var _ = $scope.Methods;
             var setting = $scope.Setting;
             var value = _.findScope($scope, setting.modelName.split("."), setting, this, _, event);
 
             if (value.res) {
 
-                if (event.shiftKey) {
+                if (event.shiftKey || event.which > 105) {
+                    console.log('true');
                     _.Stop(event);
                 }
                 if (event.which == 64 || event.which == 16) {
