@@ -72,15 +72,17 @@ angular
                     })
 
                     elm.on('keypress', function(event){
-                        if(event.which > 105){
+                        if((event.which > 105 | event.which < 48) || ((event.which > 105 | event.which < 48) && (event.shiftKey | event.altKey))){
                             return false;
                         }
+                       
                     });
-                   
-                   /* elm.find('input').on('blur', function (event) {
+
+                    elm.find('input').on('blur', function (event) {
                         scope.Methods.blur.call(this, event);
-                    });*/
-                  
+                        
+                    });
+
                     if(scope.buildComplete) scope.buildComplete();
                   
                    
@@ -422,9 +424,9 @@ function CBUcontroller($scope) {
     }
 
     $scope.actualizarModelo = function (modelo, id) {
-
         var m = modelo.split('.');
         var value = document.querySelector("#" + id + " input").value;
+        value = value.replace(/[^0-9\,]/g,"");
         if (m.length == 1)
             $scope.$parent[m[0]] = value;
         else if (m.length == 2) {
