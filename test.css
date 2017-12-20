@@ -11,6 +11,13 @@ h4 i{
     margin-right: 10px;
 }
 
+body > figure{
+    background: url('portada.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
 a:focus{
     outline: none;
     box-shadow: none;
