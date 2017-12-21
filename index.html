@@ -81,6 +81,10 @@
                         <h4><i class="fa fa-clone" aria-hidden="true"></i> Instancia del Objeto CbuControl en el $Scope</h4>
                         <p>Una de las cuestiones que sucedia en <span>AS DIRECT</span> era la imposibilidad de cambiar un estado dentro del controlador Angular.js, o mejor dicho. Los controles desarrollados no tiene tales opciones. Por ejemplo dependiendo de una configuración se desactive o active un control. Esta fue una mejora a plantear </p>
                         <p>Como comente anteriormente cada vez que se crea una instancia del control <span>control-cbu</span> se génera una instancia de la clase Javascript <span>cbuControl</span> dentro del <span>$scope</span> que contiene el control. </p>
+                        
+                        <div class="alert alert-warning">
+                            <strong>IMPORTANTE!</strong> Debido al caracter asincronico de Angular.js puede que mientras se este contruendo la instancia del control se trate de ejecutar un metodo que cambie el estado del mismo; esta daria error. Para ello cualquier sentencia que cambie o interactue con una instancia debe ir dentro del metodo <strong>build-complete</strong>
+                          </div>
                         <div class="code-example">                      
 <pre>
     <span>// Desactiva el control.</span>
@@ -164,7 +168,7 @@
                         <div class="code-example-html">  
                                 <code>
                                         <table class='code-table'><tr><td>1</td>
-                                            <td><span class='tag'>&lt;control-cbu</span> <span class='attr'>id</span>=<span class='value'>"ComponentCBUone"</span> <span class='attr'>label</span>=<span class='value'>"CBU"</span><span class='tag'>&gt;</span></td></tr><tr><td>2</td><td><span class='tag'>&lt;/control-cbu&gt;</span></td></tr></table>
+                                            <td><span class='tag'>&lt;control-cbu</span> <span class='attr'>id</span>=<span class='value'>"ComponentCBUone"</span> <span class='attr'>label</span>=<span class='value'>"CBU"</span> <span class='attr'>required</span>=<span class='value'>"true"</span><span class='tag'>&gt;</span></td></tr><tr><td>2</td><td><span class='tag'>&lt;/control-cbu&gt;</span></td></tr></table>
                                 </code>
                         </div>
                         <p>
